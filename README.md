@@ -8,8 +8,6 @@
 
 A plug-and-play Discord bot that tracks events from any Meetup group and answers questions about upcoming events, group information, and community details. The bot combines data from Meetup events pages and official websites to provide comprehensive information to users.
 
-[![Discord Bot Demo](https://img.shields.io/badge/Demo-Try%20It%20Now-7289DA.svg)](https://discord.com/developers/applications)
-
 ## Features
 
 - **Multi-Group Support**: Track events from multiple Meetup groups simultaneously
@@ -64,12 +62,6 @@ EVENT_GROUPS = {
         "website_url": "https://cbuscodeandcoffee.com/",
         "description": "Software engineering community for developers by developers"
     },
-    "python_columbus": {
-        "name": "Python Columbus",
-        "meetup_url": "https://www.meetup.com/python-columbus/events/",
-        "website_url": "https://pythoncolumbus.org/",
-        "description": "Python programming community in Columbus"
-    }
     # Add more groups here...
 }
 ```
@@ -104,14 +96,6 @@ python bot.py
 2. **Find the Official Website**: Look for the group's official website (optional)
 3. **Add Configuration**: Add a new entry to the `EVENT_GROUPS` dictionary
 
-```python
-"my_new_group": {
-    "name": "My New Meetup Group",
-    "meetup_url": "https://www.meetup.com/my-new-group/events/",
-    "website_url": "https://my-new-group.com/",
-    "description": "Description of what this group is about"
-}
-```
 
 ### Switching Between Groups
 
@@ -259,13 +243,6 @@ We welcome contributions! Please feel free to submit a Pull Request. For major c
 [![GitHub issues](https://img.shields.io/github/issues/yourusername/ccc_bot)](https://github.com/yourusername/ccc_bot/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/ccc_bot)](https://github.com/yourusername/ccc_bot/pulls)
 
-## 🆘 Support
-
-For issues and questions:
-- 🐛 [Create an issue](https://github.com/yourusername/ccc_bot/issues) on GitHub
-- 📖 Check the [troubleshooting section](#troubleshooting)
-- 📋 Review the [example configurations](example_groups.py)
-- 💬 Join our [Discord community](https://discord.gg/your-invite-link)
 
 ### 📈 Roadmap
 
