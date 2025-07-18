@@ -6,7 +6,13 @@
 [![Groq](https://img.shields.io/badge/Groq-LLM-00A67E.svg)](https://console.groq.com/)
 [![Brave Search](https://img.shields.io/badge/Brave-Search-FF2000.svg)](https://api.search.brave.com/)
 
-A plug-and-play Discord bot that tracks events from any Meetup group and answers questions about upcoming events, group information, and community details. The bot combines data from Meetup events pages and official websites to provide comprehensive information to users.
+A plug-and-play Discord bot that tracks events from any Meetup group and answers questions about upcoming events, group information, and community details. 
+
+**This bot is designed to extract information from open/public websites (where robots.txt allows crawling) using BeautifulSoup. It focuses on data from events hosted on Meetup pages and works best for public/open Meetup events.** If a website is private, requires login, or blocks bots in robots.txt, the bot may not be able to fetch event data. 
+
+Feel free to contribute new data extraction methods or suggest improvements for supporting more event platforms and private/complex sites!
+
+[![Discord Bot Demo](https://img.shields.io/badge/Demo-Try%20It%20Now-7289DA.svg)](https://discord.com/developers/applications)
 
 ## Features
 
@@ -172,6 +178,18 @@ Discord Response
 
 ## Future Enhancements
 
+### Reduce Brave API call
+
+Currently, the bot uses the Brave Search API as a fallback or supplement to direct web scraping. To minimize API usage (and stay within free tier limits), future improvements could include:
+- **Prioritizing direct HTML/JSON extraction**: Always try to extract data from the target website first (using BeautifulSoup or direct JSON parsing) before making a Brave API call.
+- **Caching**: Cache recent event data or responses to avoid repeated API calls for the same queries.
+- **Rate limiting**: Implement internal rate limiting to avoid unnecessary or duplicate Brave API requests.
+- **User feedback**: Inform users when data is coming from cache or when a Brave API call is being made.
+- **Configurable fallback**: Allow users to disable Brave API fallback if they want to strictly avoid external API usage.
+- **Support for more direct integrations**: Add more direct integrations for popular event platforms to reduce reliance on search APIs.
+
+These strategies will help keep the bot efficient, cost-effective, and more privacy-friendly.
+
 ### RAG (Retrieval-Augmented Generation)
 - **Vector Database**: Store event embeddings for semantic search
 - **Chunking**: Split large documents into searchable chunks
@@ -236,13 +254,13 @@ We welcome contributions! Please feel free to submit a Pull Request. For major c
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### 📊 Project Status
+## 🆘 Support
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/ccc_bot?style=social)](https://github.com/yourusername/ccc_bot)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/ccc_bot?style=social)](https://github.com/yourusername/ccc_bot)
-[![GitHub issues](https://img.shields.io/github/issues/yourusername/ccc_bot)](https://github.com/yourusername/ccc_bot/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/ccc_bot)](https://github.com/yourusername/ccc_bot/pulls)
-
+For issues and questions:
+- 🐛 [Create an issue](https://github.com/yourusername/ccc_bot/issues) on GitHub
+- 📖 Check the [troubleshooting section](#troubleshooting)
+- 📋 Review the [example configurations](example_groups.py)
+- 💬 Join our [Discord community](https://discord.gg/your-invite-link)
 
 ### 📈 Roadmap
 
@@ -253,15 +271,11 @@ We welcome contributions! Please feel free to submit a Pull Request. For major c
 - [ ] **Multi-language Support**: International group support
 - [ ] **Analytics Dashboard**: Track popular events and engagement
 
-### ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/ccc_bot&type=Date)](https://star-history.com/#yourusername/ccc_bot&Date)
-
 ---
 
 **Note**: This bot is designed for educational and community use. Please respect Meetup's terms of service and rate limits when using this tool.
 
-### 🙏 Acknowledgments
+### Links to the resources used in this repo.
 
 - [Discord.py](https://discordpy.readthedocs.io/) - Discord API wrapper
 - [Groq](https://console.groq.com/) - Fast LLM inference

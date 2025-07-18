@@ -112,12 +112,11 @@ def fetch_meetup_data(group_config):
         # Look for the __NEXT_DATA__ script tag
         next_data_script = soup.find('script', id='__NEXT_DATA__')
         
-        if (next_data_script and hasattr(next_data_script, 'string') 
-            and next_data_script.string):
+        if next_data_script:
             logger.info("Found __NEXT_DATA__ script tag")
             
             try:
-                json_data = json.loads(next_data_script.string)
+                json_data = json.loads(next_data_script.get_text())
                 logger.info("Successfully parsed Meetup JSON data")
                 return extract_comprehensive_meetup_data(json_data, group_config)
                     
